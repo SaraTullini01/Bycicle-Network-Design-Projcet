@@ -44,11 +44,11 @@ In questa sezione viene mostrata l'evoluzione della rete ciclabile: dalla strutt
 
 ### 1. Istanza del Problema (Input)
 Il grafo di partenza rappresenta tutte le connessioni possibili tra i nodi (punti di interesse ognuno con un valore di likeness). Ogni arco ha un costo di realizzazione e un valore di *likeness*.
-![Grafo Iniziale](images/grafo_iniziale.png)
+![Grafo Iniziale](grafi_salvati/grafo_iniziale.png)
 > *Didascalia: Grafo non orientato di input. La complessità del problema deriva dall'elevato numero di combinazioni possibili sotto un vincolo di budget pari al 40% del costo totale.*
 
 ### 2. Soluzione Intermedia (Approccio Greedy)
-![Soluzione Greedy](images/greedy.png)
+![Soluzione Greedy](grafi_salvati/greedy.png)
 > *Didascalia: Esempio di soluzione sub-ottimale. L'algoritmo Greedy, pur garantendo la connessione, rimane intrappolato in un ottimo locale (Likeness: 129), non riuscendo a sfruttare appieno le potenzialità della rete.*
 
 ### 3. Soluzioni Ottime (Meta-euristiche)
@@ -56,12 +56,12 @@ Grazie all'implementazione di algoritmi stocastici e di ricerca in intorni ampi,
 
 | Risultato GRASP | Risultato LNS |
 | :---: | :---: |
-| ![GRASP](images/grafo_finale_GRASP.png) | ![LNS](images/grafo_finale_LNS.png) |
+| ![GRASP](grafi_salvati/grafo_finale_GRASP.png) | ![LNS](grafi_salvati/grafo_finale_LNS.png) |
 | *Soluzione trovata tramite ricerca randomizzata.* | *Soluzione raffinata tramite Destroy & Repair.* |
 
 ### 4. Robustezza della Rete (Analisi Statistica)
 L'istogramma seguente mostra quante volte ogni arco è stato selezionato durante le diverse iterazioni dell'algoritmo LNS.
-![Analisi Frequenze](images/istogramma.png)
+![Analisi Frequenze](grafi_salvati/istogramma.png)
 > *Didascalia: Gli archi con frequenza 100% rappresentano le "dorsali" fondamentali della rete ciclabile, ovvero quei collegamenti che risultano essenziali in ogni configurazione ad alta efficienza.*
 
 ---
