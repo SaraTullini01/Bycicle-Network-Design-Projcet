@@ -38,10 +38,31 @@ I modelli migliorativi (GRASP e LNS) hanno permesso di ottenere un incremento de
 
 ---
 
-## 🖼️ Visualizzazione della Rete
-Di seguito, la rappresentazione del grafo ottimizzato dove sono stati selezionati gli archi che garantiscono la massima connessione e appetibilità turistico-culturale:
+## 📊 Analisi Visiva e Risultati
 
+In questa sezione viene mostrata l'evoluzione della rete ciclabile: dalla struttura potenziale di partenza fino alla configurazione ottimale ottenuta con le meta-euristiche.
 
+### 1. Istanza del Problema (Input)
+Il grafo di partenza rappresenta tutte le connessioni possibili tra i nodi (punti di interesse ognuno con un valore di likeness). Ogni arco ha un costo di realizzazione e un valore di *likeness*.
+![Grafo Iniziale](images/grafo_iniziale.png)
+> *Didascalia: Grafo non orientato di input. La complessità del problema deriva dall'elevato numero di combinazioni possibili sotto un vincolo di budget pari al 40% del costo totale.*
+
+### 2. Soluzione Intermedia (Approccio Greedy)
+![Soluzione Greedy](images/greedy.png)
+> *Didascalia: Esempio di soluzione sub-ottimale. L'algoritmo Greedy, pur garantendo la connessione, rimane intrappolato in un ottimo locale (Likeness: 129), non riuscendo a sfruttare appieno le potenzialità della rete.*
+
+### 3. Soluzioni Ottime (Meta-euristiche)
+Grazie all'implementazione di algoritmi stocastici e di ricerca in intorni ampi, è stato possibile raggiungere il "presunto" ottimo globale (Likeness: 154).
+
+| Risultato GRASP | Risultato LNS |
+| :---: | :---: |
+| ![GRASP](images/grafo_finale_GRASP.png) | ![LNS](images/grafo_finale_LNS.png) |
+| *Soluzione trovata tramite ricerca randomizzata.* | *Soluzione raffinata tramite Destroy & Repair.* |
+
+### 4. Robustezza della Rete (Analisi Statistica)
+L'istogramma seguente mostra quante volte ogni arco è stato selezionato durante le diverse iterazioni dell'algoritmo LNS.
+![Analisi Frequenze](images/istogramma.png)
+> *Didascalia: Gli archi con frequenza 100% rappresentano le "dorsali" fondamentali della rete ciclabile, ovvero quei collegamenti che risultano essenziali in ogni configurazione ad alta efficienza.*
 
 ---
 
